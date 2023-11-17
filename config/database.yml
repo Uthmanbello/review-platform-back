@@ -87,6 +87,4 @@ test:
 #
 production:
   <<: *default
-  database: kasuwar_arewa_back_production
-  username: kasuwar_arewa_back
-  password: <%= ENV["KASUWAR_AREWA_BACK_DATABASE_PASSWORD"] %>
+   url: <%= ENV['DATABASE_URL'] %>
