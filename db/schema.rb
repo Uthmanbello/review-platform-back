@@ -42,12 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_153119) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "facebook_reviews", force: :cascade do |t|
     t.string "full_name"
     t.string "username"
@@ -56,31 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_153119) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.decimal "price"
-    t.decimal "delivery_cost"
-    t.string "delivery_time"
-    t.string "vendor"
-    t.text "description"
-    t.integer "quantity"
-    t.string "size"
-    t.bigint "sub_category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
-  end
-
-  create_table "sub_categories", force: :cascade do |t|
-    t.string "name"
-    t.bigint "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_sub_categories_on_category_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "products", "sub_categories"
-  add_foreign_key "sub_categories", "categories"
 end
