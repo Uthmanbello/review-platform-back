@@ -4,6 +4,7 @@
 
 <br>
 
-<div>
-  <%= link_to "Back to facebook reviews", facebook_reviews_path %>
-</div>
+<%= link_to facebook_reviews_path, class: 'column align-center' do %>
+  <i class="fas fa-arrow-left icon blue"></i>
+  <p class='icon-label blue'>Back to reviews</p>
+<% end %>

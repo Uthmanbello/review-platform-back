@@ -25,7 +25,7 @@ class FacebookReviewsController < ApplicationController
 
     respond_to do |format|
       if @facebook_review.save
-        format.html { redirect_to facebook_review_url(@facebook_review), notice: "Facebook review was successfully created." }
+        format.html { redirect_to facebook_reviews_url, notice: "Facebook review was successfully created." }
         format.json { render :show, status: :created, location: @facebook_review }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class FacebookReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @facebook_review.update(facebook_review_params)
-        format.html { redirect_to facebook_review_url(@facebook_review), notice: "Facebook review was successfully updated." }
+        format.html { redirect_to facebook_reviews_url, notice: "Facebook review was successfully updated." }
         format.json { render :show, status: :ok, location: @facebook_review }
       else
         format.html { render :edit, status: :unprocessable_entity }

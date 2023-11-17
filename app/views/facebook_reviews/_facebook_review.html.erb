@@ -1,4 +1,9 @@
-<div id="<%= dom_id facebook_review %>">
+<div id="<%= dom_id facebook_review %>" class= "index-item">
+  <p>
+    <strong>Last update:</strong>
+    <%= facebook_review.updated_at %>
+  </p>
+
   <p>
     <strong>Full name:</strong>
     <%= facebook_review.full_name %>
@@ -10,8 +15,7 @@
   </p>
 
   <p>
-    <strong>Review text:</strong>
+    <strong>Review:</strong>
     <%= facebook_review.review_text %>
-  </p>
-
+  </p> 
 </div>
