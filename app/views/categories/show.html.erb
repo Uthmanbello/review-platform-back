@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class='margin-left'><%= @category.name %> Sub-Categories</h1>
+<% @sub_categories.each do |sub_category| %>
+  <%= link_to sub_category.name, category_sub_category_path(@category, sub_category), class: 'align-center justify-center bold' %>
+<% end %>
+<%= link_to 'Add New Sub-Category', new_category_sub_category_path(@category), class: 'margin-left add-btn margin-top' %>
+
+
+<hr class='margin-top margin-bottom'>
+<div>
+  <%= link_to "Edit #{@category.name}", edit_category_path(@category), class: 'edit-btn margin-left margin-right' %> |
+  <%= link_to "Back to categories", categories_path %>
+
+  <%= button_to "Delete #{@category.name}", @category, method: :delete, class: 'delete-btn margin-left margin-top' %>
+</div>

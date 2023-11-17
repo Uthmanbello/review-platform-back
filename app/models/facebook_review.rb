@@ -1,0 +1,2 @@
+class FacebookReview < ApplicationRecord
+end

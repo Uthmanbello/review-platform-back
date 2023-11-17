@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @facebook_review %>
+
+<div>
+  <%= link_to "Edit this facebook review", edit_facebook_review_path(@facebook_review) %> |
+  <%= link_to "Back to facebook reviews", facebook_reviews_path %>
+
+  <%= button_to "Destroy this facebook review", @facebook_review, method: :delete %>
+</div>

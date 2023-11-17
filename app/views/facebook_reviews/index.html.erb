@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Facebook reviews</h1>
+
+<div id="facebook_reviews">
+  <% @facebook_reviews.each do |facebook_review| %>
+    <%= render facebook_review %>
+    <p>
+      <%= link_to "Show this facebook review", facebook_review %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New facebook review", new_facebook_review_path %>
