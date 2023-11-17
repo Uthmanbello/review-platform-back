@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @facebook_review %>
+
+<div class='action-buttons'>
+  <%= link_to facebook_reviews_path, class: 'column align-center' do %>
+    <i class="fas fa-arrow-left icon blue"></i>
+    <p class='icon-label blue'>Back to reviews</p>
+  <% end %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <%= link_to edit_facebook_review_path(@facebook_review), class: 'column align-center' do %>
+    <i class="fas fa-pen icon blue"></i>
+    <p class='icon-label blue'>Edit this review</p>
+  <% end %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <%= button_to @facebook_review, method: :delete, class: 'column align-center delete-btn' do %>
+    <i class="fas fa-trash icon red"></i>
+    <p class='icon-label red'>Delete this review</p>
+  <% end %>
+</div>
