@@ -21,7 +21,7 @@ module KasuwarArewaBack
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3001' # Add your React app's origin
+        origins 'https://manager-review-platform.vercel.app/' # Add your React app's origin
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
